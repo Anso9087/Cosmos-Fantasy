@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D bulletBody;
     public float force;
+    public float lifeTime = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class BulletScript : MonoBehaviour
         bulletBody.velocity = new Vector2(direction.x, direction.y).normalized * force;
         float rot =Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+        Destroy(gameObject, lifeTime);
     }
 
     // Update is called once per frame
