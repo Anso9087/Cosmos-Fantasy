@@ -222,9 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186cdc8ae854e1148aea9334030e8178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 7439805305795739068, guid: d9df314370e6e15428ac502958fb1776, type: 3}
   bullet: {fileID: 7783121034937077945, guid: d3ac382a083f5544ca2310a5f4c70373, type: 3}
   distanceToShoot: 3
   distanceToStop: 1
   fireRate: 0.5
+  weapon: {fileID: 0}
   firingPoint: {fileID: 5200585431062125717}
+  enemyHealth: 20

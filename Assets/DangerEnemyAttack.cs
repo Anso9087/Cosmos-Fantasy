@@ -5,7 +5,7 @@ using UnityEngine;
 public class DangerEnemyAttack : MonoBehaviour
 {
     public Transform target;
-   
+    public float enemyHealth;
     private Rigidbody2D rb2D;
     // Start is called before the first frame update
     private void Start()
@@ -19,11 +19,18 @@ public class DangerEnemyAttack : MonoBehaviour
         if (!target){
             getarget();
         }
+        if (enemyHealth <= 0){
+            Destroy(gameObject);
+        }
     }
 
     private void getarget(){
         if ( GameObject.FindGameObjectWithTag("Player")){
             target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
+        if (enemyHealth <= 0){
+            Destroy(gameObject);
         }
         
     }
@@ -33,8 +40,8 @@ public class DangerEnemyAttack : MonoBehaviour
             Destroy(other.gameObject);
             target = null;
         } else if (other.gameObject.CompareTag("Bullet")){
+            enemyHealth -= other.gameObject.GetComponent<Bullet>().damage;
             Destroy(other.gameObject);
-            Destroy(gameObject);
             
         }
     }

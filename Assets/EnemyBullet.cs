@@ -8,24 +8,18 @@ public class EnemyBullet : MonoBehaviour
     public float lifeTime;
     private Rigidbody2D enemyBullet;
     public float damage;
-    public Transform player;
     
     // Start is called before the first frame update
     void Start()
     {
         enemyBullet = GetComponent<Rigidbody2D>();
-        Vector3 direction = player.position - transform.position;
-        Vector3 rotation = transform.position - player.position;
-        enemyBullet.velocity = new Vector2(direction.x, direction.y).normalized * force;
-        float rot =Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
         Destroy(gameObject, lifeTime);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.Translate(Vector2.right * force * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other){
