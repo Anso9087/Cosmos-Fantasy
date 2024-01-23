@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DangerChase : MonoBehaviour
 {
-    public GameObject player;
+    public Transform player;
     public float speed;
     public float distanceBetween;
     private float distance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        getarget();
     }
 
     // Update is called once per frame
@@ -28,5 +28,11 @@ public class DangerChase : MonoBehaviour
         }
         
 
+    }
+    private void getarget(){
+        if ( GameObject.FindGameObjectWithTag("Player")){
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        
     }
 }

@@ -11,6 +11,7 @@ public class DangerEnemyAttack : MonoBehaviour
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        getarget();
     }
 
     // Update is called once per frame
