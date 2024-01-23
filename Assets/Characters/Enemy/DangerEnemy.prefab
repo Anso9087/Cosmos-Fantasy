@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af0eeaa6000f7141b911bbf02a33de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7881294834101325396, guid: d9df314370e6e15428ac502958fb1776, type: 3}
+  player: {fileID: 7439805305795739068, guid: d9df314370e6e15428ac502958fb1776, type: 3}
   speed: 0.5
   distanceBetween: 4
 --- !u!61 &6589681473495562753

@@ -5,12 +5,14 @@ using UnityEngine;
 public class RangeChase : MonoBehaviour
 {
     public Transform player;
+    private SpriteRenderer rangeEnemy;
     public float speed;
     public float distanceBetween;
     private float distance;
     // Start is called before the first frame update
     void Start()
     {
+        this.rangeEnemy = this.GetComponent<SpriteRenderer>();
         getarget();
     }
 
@@ -23,6 +25,7 @@ public class RangeChase : MonoBehaviour
 
             if (distance>=distanceBetween){
                 transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed*Time.deltaTime);
+                this.rangeEnemy.flipX = player.transform.position.x < this.transform.position.x;
             }
 
         }
