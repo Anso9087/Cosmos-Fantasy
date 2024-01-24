@@ -17,9 +17,9 @@ public class playerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount =Mathf.Clamp(health / maxHealth, 0, 1);
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1); // affect the filling percentage of the health bar
 
-        if (health <= 0){
+        if (health <= 0){ // when health <= 0, destroy player
             Destroy(gameObject);
         }
     }

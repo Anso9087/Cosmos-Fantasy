@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
     private Camera mainCam;
     private Vector3 mousePOs;
     public GameObject bullet;
-    public Transform bulletTransform;
+    public Transform weapon;
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
@@ -20,10 +20,10 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePOs = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        mousePOs = mainCam.ScreenToWorldPoint(Input.mousePosition); //set the mouse position based on the main camera input
         Vector3 rotation = mousePOs - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        transform.rotation = Quaternion.Euler(0, 0, rotZ); // rotate to correct value
 
         if(!canFire){
             timer += Time.deltaTime;
@@ -33,9 +33,9 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(0) && canFire){
+        if(Input.GetMouseButton(0) && canFire){ //left clicl the mouse button to shoot
             canFire =false;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            Instantiate(bullet, weapon.position, Quaternion.identity); //spawn the object at the fire point and shoot
         }
     }
 }

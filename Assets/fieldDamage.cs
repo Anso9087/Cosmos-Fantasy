@@ -17,7 +17,7 @@ public class fieldDamage : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D other){
+    private void OnTriggerEnter2D(Collider2D other){ // when the player enter the field, player would be damaged
         if (other.gameObject.CompareTag("Player")){
             other.gameObject.GetComponent<playerHealth>().health -= damage;
         }

@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         enemyBullet = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, lifeTime);
+        Destroy(gameObject, lifeTime); //destroy bullet when the life time is 0
     }
 
     // Update is called once per frame
@@ -23,9 +23,9 @@ public class EnemyBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.CompareTag("Player")){
-            other.gameObject.GetComponent<playerHealth>().health -= damage;
-            Destroy(gameObject);
+        if (other.gameObject.CompareTag("Player")){ //the enemy bullet can only trigger with the object with "Player" tag
+            other.gameObject.GetComponent<playerHealth>().health -= damage; // minus player health
+            Destroy(gameObject); //destroy the enemy bullet
         }
     }
 
