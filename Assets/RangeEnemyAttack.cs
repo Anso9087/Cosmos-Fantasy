@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RangeEnemyAttack : MonoBehaviour
 {
-    public Transform target;
+    public Transform player;
     private Rigidbody2D rb2D;
     public GameObject bullet;
-    public float distanceToShoot;
+    public float ableShootDistance;
     public float fireRate;
     private float timeToFire;
     public Transform weapon; // follow the player direction to rotate
@@ -23,16 +23,18 @@ public class RangeEnemyAttack : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (target != null){
-            Vector3 rotation = target.position - weapon.transform.position;
-            float rotZ =Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg; // fin out the rotation degree
-            weapon.transform.rotation = Quaternion.Euler(0, 0, rotZ);
-            if (Vector2.Distance(target.position, transform.position) <= distanceToShoot){ //set the enemy can only shoot in certain distance
+        if (player != null){
+            Vector3 rotation = player.position - weapon.transform.position;
+            float zRotation =Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg; // fin out the rotation degree
+            weapon.transform.rotation = Quaternion.Euler(0, 0, zRotation);
+            if (Vector2.Distance(player.position, transform.position) <= ableShootDistance){ //set the enemy can only shoot in certain distance
                 Shoot();
             }
         
         }
         if (enemyHealth <= 0){ // when the health of the enemy <= 0, destroy the game object from the scene
+            Score.scoreValue += 15;
+            KillCount.killValue += 1;
             Destroy(gameObject);
         }
     }
@@ -48,7 +50,7 @@ public class RangeEnemyAttack : MonoBehaviour
 
     private void getarget(){ // set the target to player when the enemy spawn
         if ( GameObject.FindGameObjectWithTag("Player")){
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         
     }

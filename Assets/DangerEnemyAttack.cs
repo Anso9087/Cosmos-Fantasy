@@ -19,6 +19,8 @@ public class DangerEnemyAttack : MonoBehaviour
    private void Update()
     {
         if (enemyHealth <= 0){ // when the health of the enemy <= 0, destroy the game object from the scene
+            Score.scoreValue += 10;
+            KillCount.killValue += 1;
             Destroy(gameObject); 
         }
     }

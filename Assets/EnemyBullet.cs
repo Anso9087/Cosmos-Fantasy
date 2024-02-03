@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float force;
+    public float shootingSpeed;
     public float lifeTime;
     private Rigidbody2D enemyBullet;
     public float damage;
@@ -19,7 +19,7 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(Vector2.right * force * Time.deltaTime);
+        transform.Translate(Vector2.right * shootingSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other){

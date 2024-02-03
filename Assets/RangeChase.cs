@@ -7,7 +7,7 @@ public class RangeChase : MonoBehaviour
     public Transform player; // player transform
     private SpriteRenderer rangeEnemy; // accessing the sprite renderer of the range enemy
     public float speed;
-    public float distanceBetween; // distance between the player and the range enemy
+    public float distanceBetweenPlayer; // distance between the player and the range enemy
     private float distance;
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,10 @@ public class RangeChase : MonoBehaviour
     void Update()
     {
         if (player != null){ // prevent the null reference error
-            distance = Vector2.Distance(transform.position, player.position);
             Vector2 direction = player.position - transform.position;
+            distance = Vector2.Distance(transform.position, player.position);
 
-            if (distance>=distanceBetween){
+            if (distance>=distanceBetweenPlayer){
                 transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed*Time.deltaTime); // move to the direction of the player
                 this.rangeEnemy.flipX = player.transform.position.x < this.transform.position.x; // flip to face the player
             }

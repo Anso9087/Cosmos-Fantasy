@@ -18,11 +18,11 @@ public class Bullet : MonoBehaviour
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         bulletBody = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePos - transform.position;
-        Vector3 rotation = transform.position -mousePos;
-        bulletBody.velocity = new Vector2(direction.x, direction.y).normalized * shootingSpeed; //shoot at the correct direction with shooting speed
-        float rot =Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 90); //totate the bullet to the correct position
+        Vector3 bulletRotation = transform.position -mousePos;
+        Vector3 bulletDirection = mousePos - transform.position;
+        bulletBody.velocity = new Vector2(bulletDirection.x, bulletDirection.y).normalized * shootingSpeed; //shoot at the correct direction with shooting speed
+        float zRotation =Mathf.Atan2(bulletRotation.y, bulletRotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, zRotation + 90); //rotate the bullet to the correct position
         Destroy(gameObject, lifeTime); //destroy bullet when the life time is 0
     }
 

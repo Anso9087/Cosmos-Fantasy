@@ -8,9 +8,8 @@ public class Shooting : MonoBehaviour
     private Vector3 mousePOs;
     public GameObject bullet;
     public Transform weapon;
-    public bool canFire;
-    private float timer;
-    public float timeBetweenFiring;
+    private float timeToFire;
+    public float fireRate;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,17 +24,18 @@ public class Shooting : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ); // rotate to correct value
 
-        if(!canFire){
-            timer += Time.deltaTime;
-            if(timer > timeBetweenFiring){
-                canFire = true;
-                timer = 0;
-            }
-        }
 
-        if(Input.GetMouseButton(0) && canFire){ //left clicl the mouse button to shoot
-            canFire =false;
-            Instantiate(bullet, weapon.position, Quaternion.identity); //spawn the object at the fire point and shoot
+        if(Input.GetMouseButton(0) && !AbilityPause.isPause){ //left click the mouse button to shoot
+            Shoot();
+        }
+    }
+
+    private void Shoot(){
+        if (timeToFire<= 0f){
+            Instantiate(bullet, weapon.position, weapon.transform.rotation); //spawn a bullet object and shoot from the firing point position and rotate the bullet towards player
+            timeToFire = fireRate; //setting the firing rate
+        } else {
+            timeToFire -= Time.deltaTime;
         }
     }
 }

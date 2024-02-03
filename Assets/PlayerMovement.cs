@@ -7,13 +7,13 @@ using UnityEngine.InputSystem; //using the Unity Iput system package
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 1f;
-    public float collisionOffset = 0.05f; //value of how fast to pick up collision
+    public float speed = 1f;
+    public float collisionPickUp = 0.05f; //value of how fast to pick up collision
     public ContactFilter2D movementFilter;
     private SpriteRenderer playerSpriteRenderer;
     private Vector2 movementInput;
     private Rigidbody2D player2D;
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>(); //help to check the movement is valid before the moving, check is there any collision
+    List<RaycastHit2D> doCollisions = new List<RaycastHit2D>(); //help to check the movement is valid before the moving, check is there any collision
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
    
     private void FixedUpdate() {
         if(movementInput != Vector2.zero){ //if player is trying to move
-            int count = player2D.Cast(movementInput, movementFilter, castCollisions, 
-                moveSpeed * Time.fixedDeltaTime + collisionOffset);
+            int count = player2D.Cast(movementInput, movementFilter, doCollisions, 
+                speed * Time.fixedDeltaTime + collisionPickUp);
             
             if(count == 0){
-                player2D.MovePosition(player2D.position + movementInput * moveSpeed * Time.fixedDeltaTime); //move in a consistent speed in consistent frame
+                player2D.MovePosition(player2D.position + movementInput * speed * Time.fixedDeltaTime); //move in a consistent speed in consistent frame
             }
         }
         if(movementInput.x<0){ //flipping based on the movement input of player

@@ -7,17 +7,17 @@ public class playerHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     public float health;
-    public float maxHealth;
-    public Image healthBar;
+    public float maximumHealth;
+    public Image healthBarPlayer;
     void Start()
     {
-        maxHealth = health;
+        maximumHealth = health;
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1); // affect the filling percentage of the health bar
+        healthBarPlayer.fillAmount = Mathf.Clamp(health / maximumHealth, 0, 1); // affect the filling percentage of the health bar
 
         if (health <= 0){ // when health <= 0, destroy player
             Destroy(gameObject);
