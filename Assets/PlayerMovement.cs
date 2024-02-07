@@ -7,7 +7,7 @@ using UnityEngine.InputSystem; //using the Unity Iput system package
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 1f;
+    public static float speed = 2f;
     public float collisionPickUp = 0.05f; //value of how fast to pick up collision
     public ContactFilter2D movementFilter;
     private SpriteRenderer playerSpriteRenderer;

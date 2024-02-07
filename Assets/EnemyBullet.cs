@@ -24,7 +24,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Player")){ //the enemy bullet can only trigger with the object with "Player" tag
-            other.gameObject.GetComponent<playerHealth>().health -= damage; // minus player health
+            playerHealth.health -= damage; // minus player health
             Destroy(gameObject); //destroy the enemy bullet
         }
     }

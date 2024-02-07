@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class playerHealth : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float health;
-    public float maximumHealth;
+    public static float health = 100f;
+    public static float maximumHealth;
     public Image healthBarPlayer;
     void Start()
     {

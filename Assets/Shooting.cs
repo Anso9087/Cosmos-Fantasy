@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public Transform weapon;
     private float timeToFire;
-    public float fireRate;
+    public static float fireRate = 0.3f;
     // Start is called before the first frame update
     void Start()
     {
