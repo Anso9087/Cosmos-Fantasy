@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class Option2Text : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Option2Text : MonoBehaviour
     private TMP_Text option2Text;
     public static string abilityChoose = "0";
     public static bool ableRandom = true;
+    public static int count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +21,7 @@ public class Option2Text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while(ableRandom){
-            string abilityOption1 = Option1Text.abilityChoose;
-            abilityOption.Remove(abilityOption1);
-            int randNum = UnityEngine.Random.Range(0, abilityOption.Count);
-            abilityChoose = abilityOption[randNum];
-            option2Text.text = abilityChoose;
-            abilityOption.Add(abilityOption1);
-            ableRandom = false;
-        }
+        abilityChoose = AbilityPause.ability2;
+        option2Text.text = abilityChoose;
     }
 }

@@ -9,12 +9,14 @@ public class AbilityPause : MonoBehaviour
     public GameObject abilityPause;
     public static bool isPause = false;
     public static bool shouldPause = true;
-    private List<string> abilityOption = new List<string>{"Increase health capicity", "Increase move speed", "Increase bullet speed"};
+    public static string ability1=null;
+    public static string ability2=null;
+    private string [] abilityOption = {"Increase health capicity", "Increase move speed", "Increase bullet speed"};
     // Start is called before the first frame update
     void Start()
     {
         abilityPause.SetActive(false);
-        
+        Shuffle(abilityOption);
     }
 
     // Update is called once per frame
@@ -37,44 +39,55 @@ public class AbilityPause : MonoBehaviour
         Time.timeScale = 1f;
         isPause = false;
         shouldPause = false;
+        Shuffle(abilityOption);
+        Option1Text.count = 0;
+        Option2Text.count = 0;
     }
     public void BuffAbility1(){
         if (string.Equals(Option1Text.abilityChoose, "Increase health capicity")){
             playerHealth.maximumHealth += 50f;
             playerHealth.health = playerHealth.maximumHealth;
             ResumeGame();
-            Option1Text.ableRandom = true;
         }
         if (string.Equals(Option1Text.abilityChoose, "Increase move speed")){
             PlayerMovement.speed += 1;
             ResumeGame();
-            Option1Text.ableRandom = true;
         }
         if (string.Equals(Option1Text.abilityChoose, "Increase bullet speed")){
             Shooting.fireRate -= 0.1f;
             ResumeGame();
-            Option1Text.ableRandom = true;
         }
     }
-    public void BuffAbility2(){
-        if (string.Equals(Option1Text.abilityChoose, "Increase health capicity")){
+    public void BuffAbility2()
+    {
+        if (string.Equals(Option2Text.abilityChoose, "Increase health capicity"))
+        {
             playerHealth.maximumHealth += 50f;
             playerHealth.health = playerHealth.maximumHealth;
             ResumeGame();
-            Option2Text.ableRandom = true;
         }
-        if (string.Equals(Option1Text.abilityChoose, "Increase move speed")){
+        if (string.Equals(Option2Text.abilityChoose, "Increase move speed"))
+        {
             PlayerMovement.speed += 1;
             ResumeGame();
-            Option2Text.ableRandom = true;
         }
-        if (string.Equals(Option1Text.abilityChoose, "Increase bullet speed")){
+        if (string.Equals(Option2Text.abilityChoose, "Increase bullet speed"))
+        {
             Shooting.fireRate -= 0.1f;
             ResumeGame();
-            Option2Text.ableRandom = true;
         }
     }
-
-
+    public void Shuffle(string[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            string tmp = array[i];
+            int rand = UnityEngine.Random.Range(0, array.Length);
+            array[i] = array[rand];
+            array[rand] = tmp;
+        }
+        ability1 = abilityOption[0];
+        ability2 = abilityOption[1];
+    }
 
 }
