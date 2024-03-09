@@ -48,9 +48,24 @@ public class pause_function : MonoBehaviour
     public void Again()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1f;
+         Time.timeScale = 1f;
         Debug.Log("Again");
 
     }
 
+    public void Again2()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    public void Again3()
+    {
+        SceneManager.LoadScene("main_menu_interface");
+        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
+
+  
 }
