@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class start_to_game : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene("TEST_SCENE");
+        SceneManager.LoadScene("Stage1");
     }
 }
 
