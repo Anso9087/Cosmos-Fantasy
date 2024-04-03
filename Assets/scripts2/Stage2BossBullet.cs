@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class Stage2BossBullet : MonoBehaviour
 {
-    public float shootingSpeed;
+   public float shootingSpeed;
     public float lifeTime;
     private Rigidbody2D enemyBullet;
     public float damage;
@@ -28,6 +29,7 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject); //destroy the enemy bullet
         }
         if (other.gameObject.CompareTag("Block")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet"
+            Destroy(other.gameObject);
             Destroy(gameObject); //  destroy the bullet object if hit block
         }
     }

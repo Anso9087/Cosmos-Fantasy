@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
         
     }
      private void OnTriggerEnter2D(Collider2D other){ // when things trigger the collider of the enemy
-        if (other.gameObject.CompareTag("FieldObject")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet"
+        if (other.gameObject.CompareTag("Block")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet"
             Destroy(gameObject); //  destroy the bullet object if hit block
         }
      }

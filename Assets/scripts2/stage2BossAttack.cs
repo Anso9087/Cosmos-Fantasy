@@ -9,7 +9,7 @@ public class stage2BossAttack : MonoBehaviour
     public GameObject bullet;
     public float ableShootDistance;
     public float fireRate;
-    private float timeToFire = 360f;
+    private float timeToFire = 60f;
     public Transform weapon; // follow the player direction to rotate
     public Transform firingPoint; // where the bullet fire
     public float enemyHealth;

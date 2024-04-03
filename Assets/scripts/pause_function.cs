@@ -49,6 +49,7 @@ public class pause_function : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
          Time.timeScale = 1f;
+         AbilityPause.isPause = false;
         Debug.Log("Again");
 
     }
