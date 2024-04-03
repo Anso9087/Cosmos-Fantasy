@@ -24,6 +24,11 @@ public class AbilityPause : MonoBehaviour
     {
         if(KillCount.killValue % 5 == 0 && KillCount.killValue!=0 && shouldPause){
             PauseGame();
+            if(pause_function.GameIsPaused){
+                abilityPause.SetActive(false);
+            }else{
+                PauseGame();
+            }
         }
         if (KillCount.killValue % 5 != 0){
             shouldPause = true;

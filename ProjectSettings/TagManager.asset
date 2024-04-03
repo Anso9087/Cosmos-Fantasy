@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - EnemyBullet
   - FieldObject
+  - Boss
+  - Block
   layers:
   - Default
   - TransparentFX

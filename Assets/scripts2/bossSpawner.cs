@@ -11,25 +11,20 @@ public class bossSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawner()); //start the spawning
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(KillCount.killValue == 20){
+        if (KillCount.killValue >= 5){
             ableSpawn =true;
-        }
-    }
-    private IEnumerator spawner(){
-        WaitForSeconds waitSec = new WaitForSeconds(spawningPerSec); // setting the wait how many second to spawn
-
-        while (count == 0){
-            yield return waitSec;
-            int randNum = Random.Range(0, enemyPrefabType.Length); //set up the range based on how many type of enemy prefab putting on the array
-            GameObject enemySpawn = enemyPrefabType[randNum]; // randomly set a type of enemy prefab
+        }    
+        while (count == 0 && ableSpawn){
+            GameObject enemySpawn = enemyPrefabType[0]; // randomly set a type of enemy prefab
             Instantiate(enemySpawn, transform.position, Quaternion.identity); // spawn the enemy at the position of the spawner
             count = 1;
         }
     }
+    
 }
