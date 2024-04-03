@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8415398711324902229}
-  - component: {fileID: 4114871648236471784}
+  - component: {fileID: 1322744178971068577}
   m_Layer: 0
   m_Name: PawnSpawner2
   m_TagString: Untagged
@@ -64,7 +64,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5350771054973085327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4114871648236471784
+--- !u!114 &1322744178971068577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 961350141818928118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 227252bcd78c6ff4a810d4777fdda129, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d9368f1d35f6264dae22166a09e09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawningPerSec: 3
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4801223304615944270}
-  - component: {fileID: 2293943379414727770}
+  - component: {fileID: 6442079807408146475}
   m_Layer: 0
   m_Name: PawnSpawner3
   m_TagString: Untagged
@@ -313,7 +313,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5350771054973085327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2293943379414727770
+--- !u!114 &6442079807408146475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799788878467603442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 227252bcd78c6ff4a810d4777fdda129, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d9368f1d35f6264dae22166a09e09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawningPerSec: 3
@@ -337,7 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9205571000609761949}
-  - component: {fileID: 5740359097513566535}
+  - component: {fileID: 5169455703312553115}
   m_Layer: 0
   m_Name: PawnSpawner1
   m_TagString: Untagged
@@ -360,7 +360,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5350771054973085327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5740359097513566535
+--- !u!114 &5169455703312553115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2530242273280802939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 227252bcd78c6ff4a810d4777fdda129, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d9368f1d35f6264dae22166a09e09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawningPerSec: 3
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9164283879203010468}
-  - component: {fileID: 97818442612918002}
+  - component: {fileID: 3247748885902206559}
   m_Layer: 0
   m_Name: PawnSpawner4
   m_TagString: Untagged
@@ -407,7 +407,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5350771054973085327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &97818442612918002
+--- !u!114 &3247748885902206559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4719496178684559762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 227252bcd78c6ff4a810d4777fdda129, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d9368f1d35f6264dae22166a09e09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawningPerSec: 3

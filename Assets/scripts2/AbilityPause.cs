@@ -11,7 +11,7 @@ public class AbilityPause : MonoBehaviour
     public static bool shouldPause = true;
     public static string ability1=null;
     public static string ability2=null;
-    private string [] abilityOption = {"Increase health capicity", "Increase move speed", "Increase bullet speed"};
+    private string [] abilityOption = {"Increase health capicity", "Increase move speed", "Increase bullet speed", "Increase damage"};
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +48,10 @@ public class AbilityPause : MonoBehaviour
         Option1Text.count = 0;
         Option2Text.count = 0;
     }
+    public void AddScore(){
+        Score.scoreValue += 500;
+        ResumeGame();
+    }
     public void BuffAbility1(){
         if (string.Equals(Option1Text.abilityChoose, "Increase health capicity")){
             playerHealth.maximumHealth += 50f;
@@ -62,6 +66,11 @@ public class AbilityPause : MonoBehaviour
             Shooting.fireRate -= 0.1f;
             ResumeGame();
         }
+        if (string.Equals(Option1Text.abilityChoose, "Increase damage"))
+        {
+            Bullet.damage += 5f;
+            ResumeGame();
+            }
     }
     public void BuffAbility2()
     {
@@ -81,6 +90,11 @@ public class AbilityPause : MonoBehaviour
             Shooting.fireRate -= 0.1f;
             ResumeGame();
         }
+        if (string.Equals(Option2Text.abilityChoose, "Increase damage"))
+        {
+            Bullet.damage += 5f;
+            ResumeGame();
+            }
     }
     public void Shuffle(string[] array)
     {

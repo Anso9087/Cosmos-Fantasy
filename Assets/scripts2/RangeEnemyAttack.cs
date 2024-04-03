@@ -13,6 +13,7 @@ public class RangeEnemyAttack : MonoBehaviour
     public Transform weapon; // follow the player direction to rotate
     public Transform firingPoint; // where the bullet fire
     public float enemyHealth;
+    public int score;
     // Start is called before the first frame update
     private void Start()
     {
@@ -33,7 +34,7 @@ public class RangeEnemyAttack : MonoBehaviour
         
         }
         if (enemyHealth <= 0){ // when the health of the enemy <= 0, destroy the game object from the scene
-            Score.scoreValue += 15;
+            Score.scoreValue += score;
             KillCount.killValue += 1;
             Destroy(gameObject);
         }
@@ -56,7 +57,7 @@ public class RangeEnemyAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other){ // when things trigger the collider of the enemy
         if (other.gameObject.CompareTag("Bullet")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet"
-            enemyHealth -= other.gameObject.GetComponent<Bullet>().damage; // based on the damage that set in the bullet script to hurt enemy
+            enemyHealth -= Bullet.damage; // based on the damage that set in the bullet script to hurt enemy
             Destroy(other.gameObject); // after the minus of enemy health, destroy the bullet object
         }
     }    

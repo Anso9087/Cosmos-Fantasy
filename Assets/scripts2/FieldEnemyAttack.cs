@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DangerEnemyAttack : MonoBehaviour
+public class FieldEnemyAttack : MonoBehaviour
 {
     public Transform target;
     public float enemyHealth;
     public float damage;
     private Rigidbody2D rb2D;
     public int score;
+    public GameObject fieldComponent;
     // Start is called before the first frame update
     private void Start()
     {
@@ -23,6 +24,7 @@ public class DangerEnemyAttack : MonoBehaviour
             Score.scoreValue += score;
             KillCount.killValue += 1;
             Destroy(gameObject); 
+            Instantiate(fieldComponent, transform.position, Quaternion.identity);
         }
     }
 

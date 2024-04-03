@@ -56,7 +56,7 @@ public class stage2BossAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other){ // when things trigger the collider of the enemy
         if (other.gameObject.CompareTag("Bullet")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet"
-            enemyHealth -= other.gameObject.GetComponent<Bullet>().damage; // based on the damage that set in the bullet script to hurt enemy
+            enemyHealth -= Bullet.damage; // based on the damage that set in the bullet script to hurt enemy
             Destroy(other.gameObject); // after the minus of enemy health, destroy the bullet object
         }
     }    

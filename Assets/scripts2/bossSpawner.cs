@@ -17,7 +17,7 @@ public class bossSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (KillCount.killValue >= 5){
+        if (KillCount.killValue >= 20){
             ableSpawn =true;
         }    
         while (count == 0 && ableSpawn){

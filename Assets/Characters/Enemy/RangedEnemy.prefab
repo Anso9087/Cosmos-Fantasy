@@ -230,6 +230,7 @@ MonoBehaviour:
   weapon: {fileID: 5200585431062125717}
   firingPoint: {fileID: 4568672567635461381}
   enemyHealth: 20
+  score: 15
 --- !u!1 &5796749107312492103
 GameObject:
   m_ObjectHideFlags: 0
