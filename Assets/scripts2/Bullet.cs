@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public float shootingSpeed; //the shooting speed
     public float lifeTime = 3f; // life time of the bullet, when it is 0, destroy it
 
-    public float damage;
+    public static float damage = 100;
 
     // Start is called before the first frame update
     void Start()
