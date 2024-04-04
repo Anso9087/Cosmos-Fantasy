@@ -20,6 +20,11 @@ public class start_to_game : MonoBehaviour
 
     public void ChangeScene()
     {
+        playerHealth.health = 100f;
+        Bullet.damage = 100;
+        Score.scoreValue = 0;
+        Shooting.fireRate = 0.3f;
+        PlayerMovement.speed = 2f;
         SceneManager.LoadScene("Stage1");
     }
 }

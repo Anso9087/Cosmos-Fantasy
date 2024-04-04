@@ -15,7 +15,7 @@ public class gameoverui : MonoBehaviour
     {
         // Hide the game over UI at the beginning
         gameOverUI.SetActive(false);
-        if (playerHealth.health == 0f)
+        if (playerHealth.health <= 0f)
         {
             GameOver();
 
@@ -26,6 +26,7 @@ public class gameoverui : MonoBehaviour
 
     public void GameOver()
     {
+        Time.timeScale = 0f;
         gameOverUI.SetActive(true);
     }
 }
