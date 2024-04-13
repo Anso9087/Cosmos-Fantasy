@@ -817,7 +817,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850088421}
         m_TargetAssemblyTypeName: Clear, Assembly-CSharp
-        m_MethodName: ChangeToStage3
+        m_MethodName: ChangeToMini2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

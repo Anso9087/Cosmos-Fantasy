@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = PlayerPrefs.GetFloat("speed");
         player2D = GetComponent<Rigidbody2D>(); // give rigidbody2D reference
         playerSpriteRenderer = GetComponent<SpriteRenderer>(); // give sprite renderer reference
     }

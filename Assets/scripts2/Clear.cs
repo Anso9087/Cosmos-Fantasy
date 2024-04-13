@@ -9,7 +9,7 @@ public class Clear : MonoBehaviour
 {
     public GameObject clearPannel;
     public static bool isPause = false;
-    private string [] sceneOption = {"Stage2", "Stage3"};
+    private string [] sceneOption = {"Stage2", "Stage3", "Minigame1", "Minigame2"};
     // Start is called before the first frame update
     void Start()
     {
@@ -33,23 +33,45 @@ public class Clear : MonoBehaviour
         clearPannel.SetActive(true);
         Time.timeScale = 0f;
         isPause = true;
+        PlayerPrefs.SetFloat("health", playerHealth.health);
+        PlayerPrefs.SetInt("scoreValue", Score.scoreValue);
+        PlayerPrefs.SetFloat("speed", PlayerMovement.speed);
+        PlayerPrefs.SetFloat("damage", Bullet.damage);
+        PlayerPrefs.SetFloat("fireRate", Shooting.fireRate);
     }
     
     public void ChangeToStage2()
     {
         KillCount.killValue = 0;
+        isPause = false;
         SceneManager.LoadScene(sceneOption[0]);
         Time.timeScale = 1f;
     }
     public void ChangeToStage3()
     {
         KillCount.killValue = 0;
+        isPause = false;
         SceneManager.LoadScene(sceneOption[1]);
+        Time.timeScale = 1f;
+    }
+    public void ChangeToMini1()
+    {
+        KillCount.killValue = 0;
+        isPause = false;
+        SceneManager.LoadScene(sceneOption[2]);
+        Time.timeScale = 1f;
+    }
+    public void ChangeToMini2()
+    {
+        KillCount.killValue = 0;
+        isPause = false;
+        SceneManager.LoadScene(sceneOption[3]);
         Time.timeScale = 1f;
     }
     public void BackMenu()
     {
         KillCount.killValue = 0;
+        isPause = false;
         SceneManager.LoadScene("Main_menu_interface");
         Time.timeScale = 1f;
     }
