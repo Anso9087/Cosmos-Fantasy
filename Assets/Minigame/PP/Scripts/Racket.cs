@@ -14,7 +14,6 @@ public abstract class Racket : MonoBehaviour
 
     void FixedUpdate()
     {   Movement(); // run their movement C# (what AI or human)
-        
         if (Input.GetKey("w")) { rb.transform.position += Vector3.up; } // all racket up
         if (Input.GetKey("s")) { rb.transform.position += Vector3.down; } // all racket down
     }
