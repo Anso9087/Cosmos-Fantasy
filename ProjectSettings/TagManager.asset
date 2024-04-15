@@ -10,6 +10,11 @@ TagManager:
   - FieldObject
   - Boss
   - Block
+  - Food
+  - Poison
+  - Wall
+  - Obstacle
+  - Apple
   layers:
   - Default
   - TransparentFX

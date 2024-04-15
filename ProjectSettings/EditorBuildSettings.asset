@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame1.unity
     guid: 1b95351efd452af4bb42602c466d5049
-  - enabled: 1
+  - enabled: 0
     path: Assets/Minigame/PP/Scenes/AIvsMen.unity
     guid: 63f505ad81fdcbc4bb1b8cf2bb87407e
   - enabled: 1
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame2.unity
     guid: 545bd094a96ee3543929833909edef8d
+  - enabled: 1
+    path: Assets/Minigame/pp/Assets/Scenes/AIvsMen.unity
+    guid: bf18d2c5477d88649b086c5ace70aaad
   m_configObjects: {}
