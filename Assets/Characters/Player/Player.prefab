@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c255df2290c886d4fa8df2cc79d2d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
   collisionPickUp: 0.05
   movementFilter:
     useTriggers: 0
@@ -231,6 +230,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee641321d3b5454987896075226c962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maximumHealth: 0
   healthBarPlayer: {fileID: 0}
