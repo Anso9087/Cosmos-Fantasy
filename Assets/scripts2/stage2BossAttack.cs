@@ -35,6 +35,7 @@ public class stage2BossAttack : MonoBehaviour
         if (enemyHealth <= 0){ // when the health of the enemy <= 0, destroy the game object from the scene
             Score.scoreValue += 1000;
             KillCount.killValue += 1;
+            KillCount.totalKill += 1;
             Destroy(gameObject);
         }
     }

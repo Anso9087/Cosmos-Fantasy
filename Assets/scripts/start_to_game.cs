@@ -25,6 +25,10 @@ public class start_to_game : MonoBehaviour
         PlayerPrefs.SetFloat("speed", 2f);
         PlayerPrefs.SetFloat("damage", 100);
         PlayerPrefs.SetFloat("fireRate", 0.3f);
+        PlayerPrefs.SetFloat("PlayerX", 0);
+        PlayerPrefs.SetFloat("PlayerY",0);
+        PlayerPrefs.SetFloat("PlayerZ",0);
+        PlayerPrefs.SetInt("totalKill", 0);
         SceneManager.LoadScene("Stage1");
     }
 }

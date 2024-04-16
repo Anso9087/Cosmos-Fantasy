@@ -33,10 +33,14 @@ public class miniToMain : MonoBehaviour
         toMainPannel.SetActive(true);
         Time.timeScale = 0f;
         isPause = true;
-        PlayerPrefs.SetFloat("health", playerHealth.health);
+        PlayerPrefs.SetFloat("health", playerHealth.maximumHealth);
         PlayerPrefs.SetInt("scoreValue", Score.scoreValue);
         PlayerPrefs.SetFloat("speed", PlayerMovement.speed);
         PlayerPrefs.SetFloat("damage", Bullet.damage);
         PlayerPrefs.SetFloat("fireRate", Shooting.fireRate);
+        PlayerPrefs.SetInt("count", 0);
+        PlayerPrefs.SetFloat("PlayerX", 0);
+        PlayerPrefs.SetFloat("PlayerY",0);
+        PlayerPrefs.SetFloat("PlayerZ",0);
     }
 }

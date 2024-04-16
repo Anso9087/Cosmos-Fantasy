@@ -22,7 +22,7 @@ public abstract class Racket : MonoBehaviour
     protected abstract void Movement(); // their movement C# (what AI or human)
     public void GetScore() { 
         Score++; scoreText.text = Score.ToString(); 
-        if (Score==20) {SceneManager.LoadScene("Minigame2");}
+        if (Score==20) {PlayerPrefs.SetInt("count", 2); SceneManager.LoadScene("Minigame2");}
     } // update score} // update score
 
 }

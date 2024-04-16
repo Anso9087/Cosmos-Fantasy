@@ -8,10 +8,12 @@ public class triggerer : MonoBehaviour
 {
     public GameObject minigamePannel;
     public bool isPause = false;
-    private int count = 0;
+    public static int count = 0;
     // Start is called before the first frame update
     void Start()
     {
+
+        count = PlayerPrefs.GetInt("count");
         minigamePannel.SetActive(false);
     }
 
@@ -38,7 +40,7 @@ public class triggerer : MonoBehaviour
             minigamePannel.SetActive(true);
             Time.timeScale = 0f;
             isPause = true;
-            PlayerPrefs.SetFloat("health", playerHealth.health);
+            PlayerPrefs.SetFloat("health", playerHealth.maximumHealth);
             PlayerPrefs.SetInt("scoreValue", Score.scoreValue);
             PlayerPrefs.SetFloat("speed", PlayerMovement.speed);
             PlayerPrefs.SetFloat("damage", Bullet.damage);
@@ -48,7 +50,12 @@ public class triggerer : MonoBehaviour
     public void ChangeToSS()
     {
         if(count == 0){
-            count = 1;
+             float PlayerX = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().transform.position.x;
+            float PlayerY = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().transform.position.y;
+            float PlayerZ = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().transform.position.z;
+            PlayerPrefs.SetFloat("PlayerX", PlayerX);
+            PlayerPrefs.SetFloat("PlayerY", PlayerY);
+            PlayerPrefs.SetFloat("PlayerZ", PlayerZ);
             PlayerPrefs.SetInt("count", count);
             SceneManager.LoadScene("tiny but many food");
             Time.timeScale = 1f;
@@ -58,6 +65,12 @@ public class triggerer : MonoBehaviour
     {
         if(count == 0){
             count = 1;
+            float PlayerX = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().transform.position.x;
+            float PlayerY = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().transform.position.y;
+            float PlayerZ = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().transform.position.z;
+            PlayerPrefs.SetFloat("PlayerX", PlayerX);
+            PlayerPrefs.SetFloat("PlayerY", PlayerY);
+            PlayerPrefs.SetFloat("PlayerZ", PlayerZ);
             PlayerPrefs.SetInt("count", count);
             SceneManager.LoadScene("AIvsMen");
             Time.timeScale = 1f;

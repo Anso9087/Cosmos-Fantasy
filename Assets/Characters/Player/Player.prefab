@@ -146,6 +146,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  player2D: {fileID: 9050368913422914960}
 --- !u!50 &9050368913422914960
 Rigidbody2D:
   serializedVersion: 4
