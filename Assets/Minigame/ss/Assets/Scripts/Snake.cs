@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -90,7 +90,7 @@ public class Snake : MonoBehaviour
         for (int i = 1; i < bodyParts.Count; i++) { Destroy(bodyParts[i].gameObject); } // start at 1 to not destroy head
 
         if (dieIsRebody) { bodyParts.Clear(); bodyParts.Add(transform);}// no more body but add back head
-             // if no rebody = load 1 scene
+          
 
         for (int i = 0; i < initialSize - 1; i++) { Grow(); } // -1 (head is in list)
 
@@ -103,7 +103,8 @@ public class Snake : MonoBehaviour
         else if (other.gameObject.CompareTag("Apple")) { Grow(); Grow(); } //bugs
         else if (other.gameObject.CompareTag("Poison")) { Grow(); poisonCam(Random.RandomRange(2,6)); }
         else if (other.gameObject.CompareTag("Obstacle")) { ResetState(); } // maybe I will updata new things
-        else if (other.gameObject.CompareTag("Wall")) {if (wallTP) { Traverse(other.transform); } else {  SceneManager.LoadScene("Minigame1"); }}}
+        else if (other.gameObject.CompareTag("Wall")) {if (wallTP) { Traverse(other.transform); } 
+        else {  PlayerPrefs.SetInt("count", 2); SceneManager.LoadScene("Minigame1"); }}}
     private void Traverse(Transform wall)
     {   Vector3 position = transform.position;
         if (direction.x != 0f) { position.x = -wall.position.x + direction.x; } // can use Mathf.RoundToInt()

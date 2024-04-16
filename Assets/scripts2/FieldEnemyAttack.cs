@@ -23,6 +23,7 @@ public class FieldEnemyAttack : MonoBehaviour
         if (enemyHealth <= 0){ // when the health of the enemy <= 0, destroy the game object from the scene
             Score.scoreValue += score;
             KillCount.killValue += 1;
+            KillCount.totalKill += 1;
             Destroy(gameObject); 
             Instantiate(fieldComponent, transform.position, Quaternion.identity);
         }

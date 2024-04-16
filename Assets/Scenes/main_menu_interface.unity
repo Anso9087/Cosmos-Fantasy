@@ -813,6 +813,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  player2D: {fileID: 0}
 --- !u!1 &127476803
 GameObject:
   m_ObjectHideFlags: 0

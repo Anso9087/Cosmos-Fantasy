@@ -33,11 +33,12 @@ public class Clear : MonoBehaviour
         clearPannel.SetActive(true);
         Time.timeScale = 0f;
         isPause = true;
-        PlayerPrefs.SetFloat("health", playerHealth.health);
+        PlayerPrefs.SetFloat("health", playerHealth.maximumHealth);
         PlayerPrefs.SetInt("scoreValue", Score.scoreValue);
         PlayerPrefs.SetFloat("speed", PlayerMovement.speed);
         PlayerPrefs.SetFloat("damage", Bullet.damage);
         PlayerPrefs.SetFloat("fireRate", Shooting.fireRate);
+        PlayerPrefs.SetInt("totalKill", KillCount.totalKill);
     }
     
     public void ChangeToStage2()
@@ -56,6 +57,10 @@ public class Clear : MonoBehaviour
     }
     public void ChangeToMini1()
     {
+        PlayerPrefs.SetFloat("PlayerX", -5.36f);
+        PlayerPrefs.SetFloat("PlayerY", -0.59f);
+        PlayerPrefs.SetFloat("PlayerZ", 0);
+        PlayerPrefs.SetInt("count", 0);
         KillCount.killValue = 0;
         isPause = false;
         SceneManager.LoadScene(sceneOption[2]);
@@ -63,6 +68,10 @@ public class Clear : MonoBehaviour
     }
     public void ChangeToMini2()
     {
+        PlayerPrefs.SetFloat("PlayerX", -5.36f);
+        PlayerPrefs.SetFloat("PlayerY", -0.59f);
+        PlayerPrefs.SetFloat("PlayerZ", 0);
+        PlayerPrefs.SetInt("count", 0);
         KillCount.killValue = 0;
         isPause = false;
         SceneManager.LoadScene(sceneOption[3]);
@@ -72,6 +81,7 @@ public class Clear : MonoBehaviour
     {
         KillCount.killValue = 0;
         isPause = false;
+        HighscoreTable.AddHighscoreEntry(PlayerPrefs.GetInt("scoreValue"), PlayerPrefs.GetInt("totalKill"));
         SceneManager.LoadScene("Main_menu_interface");
         Time.timeScale = 1f;
     }
