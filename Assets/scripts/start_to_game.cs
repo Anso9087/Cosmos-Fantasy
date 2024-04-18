@@ -20,10 +20,10 @@ public class start_to_game : MonoBehaviour
 
     public void ChangeScene()
     {
-        PlayerPrefs.SetFloat("health", 100f);
+        PlayerPrefs.SetFloat("health", 200f);
         PlayerPrefs.SetInt("scoreValue", 0);
         PlayerPrefs.SetFloat("speed", 2f);
-        PlayerPrefs.SetFloat("damage", 100);
+        PlayerPrefs.SetFloat("damage", 10);
         PlayerPrefs.SetFloat("fireRate", 0.3f);
         PlayerPrefs.SetFloat("PlayerX", 0);
         PlayerPrefs.SetFloat("PlayerY",1);
@@ -34,10 +34,10 @@ public class start_to_game : MonoBehaviour
     }
     public void ChangeInfinite()
     {
-        PlayerPrefs.SetFloat("health", 100f);
+        PlayerPrefs.SetFloat("health", 200f);
         PlayerPrefs.SetInt("scoreValue", 0);
         PlayerPrefs.SetFloat("speed", 2f);
-        PlayerPrefs.SetFloat("damage", 100);
+        PlayerPrefs.SetFloat("damage", 10);
         PlayerPrefs.SetFloat("fireRate", 0.3f);
         PlayerPrefs.SetFloat("PlayerX", 0);
         PlayerPrefs.SetFloat("PlayerY",0);

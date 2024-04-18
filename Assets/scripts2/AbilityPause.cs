@@ -68,11 +68,11 @@ public class AbilityPause : MonoBehaviour
             ResumeGame();
         }
         if (string.Equals(Option1Text.abilityChoose, "Increase move speed")){
-            PlayerMovement.speed += 1;
+            PlayerMovement.speed += 0.1f;
             ResumeGame();
         }
         if (string.Equals(Option1Text.abilityChoose, "Increase bullet speed")){
-            Shooting.fireRate -= 0.1f;
+            Shooting.fireRate -= 0.015f;
             ResumeGame();
         }
         if (string.Equals(Option1Text.abilityChoose, "Increase damage"))
@@ -91,12 +91,12 @@ public class AbilityPause : MonoBehaviour
         }
         if (string.Equals(Option2Text.abilityChoose, "Increase move speed"))
         {
-            PlayerMovement.speed += 1;
+            PlayerMovement.speed += 0.1f;
             ResumeGame();
         }
         if (string.Equals(Option2Text.abilityChoose, "Increase bullet speed"))
         {
-            Shooting.fireRate -= 0.1f;
+            Shooting.fireRate -= 0.015f;
             ResumeGame();
         }
         if (string.Equals(Option2Text.abilityChoose, "Increase damage"))

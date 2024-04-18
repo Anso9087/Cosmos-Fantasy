@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7439805305795739068, guid: d9df314370e6e15428ac502958fb1776, type: 3}
-  speed: 2
+  speed: 0.75
   distanceBetweenPlayer: 1
 --- !u!114 &6721481355593172089
 MonoBehaviour:
@@ -554,11 +554,11 @@ MonoBehaviour:
   player: {fileID: 7439805305795739068, guid: d9df314370e6e15428ac502958fb1776, type: 3}
   bullet: {fileID: 7783121034937077945, guid: d3ac382a083f5544ca2310a5f4c70373, type: 3}
   ableShootDistance: 3
-  fireRate: 0.5
+  fireRate: 2
   weapon: {fileID: 5200585431062125717}
   firingPoint: {fileID: 4568672567635461381}
-  enemyHealth: 20
-  score: 15
+  enemyHealth: 50
+  score: 20
 --- !u!1 &5796749107312492103
 GameObject:
   m_ObjectHideFlags: 0
