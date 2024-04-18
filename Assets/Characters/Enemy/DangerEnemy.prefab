@@ -189,5 +189,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 7439805305795739068, guid: d9df314370e6e15428ac502958fb1776, type: 3}
   enemyHealth: 20
-  damage: 100
-  score: 10
+  damage: 10
+  score: 5
