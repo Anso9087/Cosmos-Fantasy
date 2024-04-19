@@ -11,6 +11,7 @@ public class playerHealth : MonoBehaviour
     public Image healthBarPlayer;
     void Start()
     {
+        health = PlayerPrefs.GetFloat("health");
         maximumHealth = health;
     }
 

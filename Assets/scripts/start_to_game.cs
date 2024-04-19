@@ -20,7 +20,35 @@ public class start_to_game : MonoBehaviour
 
     public void ChangeScene()
     {
+        PlayerPrefs.SetFloat("health", 200f);
+        PlayerPrefs.SetInt("scoreValue", 0);
+        PlayerPrefs.SetFloat("speed", 2f);
+        PlayerPrefs.SetFloat("damage", 10);
+        PlayerPrefs.SetFloat("fireRate", 0.3f);
+        PlayerPrefs.SetFloat("PlayerX", 0);
+        PlayerPrefs.SetFloat("PlayerY",1);
+        PlayerPrefs.SetFloat("PlayerZ",0);
+        PlayerPrefs.SetInt("totalKill", 0);
         SceneManager.LoadScene("Stage1");
+        Time.timeScale = 1f;
+    }
+    public void ChangeInfinite()
+    {
+        PlayerPrefs.SetFloat("health", 200f);
+        PlayerPrefs.SetInt("scoreValue", 0);
+        PlayerPrefs.SetFloat("speed", 2f);
+        PlayerPrefs.SetFloat("damage", 10);
+        PlayerPrefs.SetFloat("fireRate", 0.3f);
+        PlayerPrefs.SetFloat("PlayerX", 0);
+        PlayerPrefs.SetFloat("PlayerY",0);
+        PlayerPrefs.SetFloat("PlayerZ",0);
+        PlayerPrefs.SetInt("totalKill", 0);
+        SceneManager.LoadScene("Infinite");
+         Time.timeScale = 1f;
+    }
+    public void ChangeToScore(){
+        SceneManager.LoadScene("ScoreBoard");
+         Time.timeScale = 1f;
     }
 }
 

@@ -14,6 +14,7 @@ public class Score : MonoBehaviour
 
     void Start()
     {
+        scoreValue =  PlayerPrefs.GetInt("scoreValue");
         score = GetComponent<TMP_Text>();
     }
      

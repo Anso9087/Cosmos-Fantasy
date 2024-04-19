@@ -13,10 +13,13 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer playerSpriteRenderer;
     private Vector2 movementInput;
     private Rigidbody2D player2D;
+
     List<RaycastHit2D> doCollisions = new List<RaycastHit2D>(); //help to check the movement is valid before the moving, check is there any collision
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
+        speed = PlayerPrefs.GetFloat("speed");
         player2D = GetComponent<Rigidbody2D>(); // give rigidbody2D reference
         playerSpriteRenderer = GetComponent<SpriteRenderer>(); // give sprite renderer reference
     }

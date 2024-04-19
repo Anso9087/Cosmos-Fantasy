@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fireRate = PlayerPrefs.GetFloat("fireRate");
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
@@ -24,7 +25,7 @@ public class Shooting : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ); // rotate to correct value
 
-        if(Input.GetMouseButton(0) && !AbilityPause.isPause){ //left click the mouse button to shoot
+        if(Input.GetMouseButton(0) && !AbilityPause.isPause && !Clear.isPause){ //left click the mouse button to shoot
             Shoot();
         }
     }
