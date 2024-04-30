@@ -42,7 +42,7 @@ public class RangeEnemyAttack : MonoBehaviour
     }
 
     private void Shoot(){
-        if (timeToFire<= 0f){
+        if (timeToFire<= 0f){ // put sound effect inside
             Instantiate(bullet, firingPoint.position, firingPoint.transform.rotation); //spawn a bullet object and shoot from the firing point position and rotate the bullet towards player
             timeToFire = fireRate; //setting the firing rate
         } else {
@@ -57,7 +57,7 @@ public class RangeEnemyAttack : MonoBehaviour
         
     }
     private void OnTriggerEnter2D(Collider2D other){ // when things trigger the collider of the enemy
-        if (other.gameObject.CompareTag("Bullet")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet"
+        if (other.gameObject.CompareTag("Bullet")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet", put sound effect here
             enemyHealth -= Bullet.damage; // based on the damage that set in the bullet script to hurt enemy
             Destroy(other.gameObject); // after the minus of enemy health, destroy the bullet object
         }
