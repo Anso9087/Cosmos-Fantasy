@@ -460,7 +460,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5397073123628497295, guid: ccd586e51a1a77b4fa9ced80227423be, type: 3}
+  m_Sprite: {fileID: 873980010, guid: 00f4b5beeec29a74696ee3415f544d62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -481,7 +481,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7978984, y: 0.7690587, z: 0.7690587}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1843,7 +1843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a7eb3b0d6a75e4746b9d10b47d222b63, type: 3}
+  m_Texture: {fileID: 2800000, guid: 626dac7a73828b44f90c5535dd6d81e5, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

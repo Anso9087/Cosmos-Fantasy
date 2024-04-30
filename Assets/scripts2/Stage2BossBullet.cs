@@ -24,11 +24,11 @@ public class Stage2BossBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.CompareTag("Player")){ //the enemy bullet can only trigger with the object with "Player" tag
+        if (other.gameObject.CompareTag("Player")){ //the enemy bullet can only trigger with the object with "Player" tag, put sound effect here
             playerHealth.health -= damage; // minus player health
             Destroy(gameObject); //destroy the enemy bullet
         }
-        if (other.gameObject.CompareTag("Block")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet"
+        if (other.gameObject.CompareTag("Block")){ // when the player's bullet trigger the collider of the enemy, based on the tag "Bullet", put sound effect here
             Destroy(other.gameObject);
             Destroy(gameObject); //  destroy the bullet object if hit block
         }

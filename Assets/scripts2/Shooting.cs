@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
     }
 
     private void Shoot(){
-        if (timeToFire<= 0f){
+        if (timeToFire<= 0f){ // put sound effect here
             Instantiate(bullet, weapon.position, weapon.transform.rotation); //spawn a bullet object and shoot from the firing point position and rotate the bullet towards player
             timeToFire = fireRate; //setting the firing rate
         } else {
