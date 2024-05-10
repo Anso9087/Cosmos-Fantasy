@@ -14536,7 +14536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawningPerSec: 2
-  spawnAt: 0
+  spawnAt: 20
   enemyPrefabType:
   - {fileID: 1426955538776450219, guid: 7312db8466ec39742960796a4d2252af, type: 3}
 --- !u!1 &1792433297

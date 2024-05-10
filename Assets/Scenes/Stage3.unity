@@ -8026,7 +8026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawningPerSec: 2
-  spawnAt: 0
+  spawnAt: 20
   enemyPrefabType:
   - {fileID: 7175895692162373407, guid: 353dae1603e47ad439219d7574d120cd, type: 3}
 --- !u!1 &1792433297
