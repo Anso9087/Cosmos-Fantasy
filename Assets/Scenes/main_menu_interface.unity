@@ -2604,8 +2604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fa01a53cdefb1478d60ca36831f20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light_Slider: {fileID: 0}
-  sceneLight: {fileID: 1169829950}
 --- !u!1 &609310104
 GameObject:
   m_ObjectHideFlags: 0
@@ -8778,7 +8776,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725307843}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e8ec6c5d7c6b5934392fcaf54c91af95, type: 3}
@@ -9063,7 +9061,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8f26b336a71d26849b6c79a20479e7d0, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e8ec6c5d7c6b5934392fcaf54c91af95, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 662b7387513e38845862d4bd48e23930, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.029
   m_Pitch: 1

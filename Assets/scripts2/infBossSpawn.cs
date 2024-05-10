@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossSpawner : MonoBehaviour
+public class infBossSpawn : MonoBehaviour
 {
-   public float spawningPerSec;
-   public int spawnAt;
+    public float spawningPerSec;
+    public int spawnAt;
     [SerializeField] private GameObject[] enemyPrefabType; // provide a better interface to add the type of enemy which will spawn to the array
     private bool ableSpawn = false; //spawning always turn on, until some situation occur which related to the kill count
     private int count = 0;
@@ -18,13 +18,13 @@ public class bossSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (KillCount.killValue >= spawnAt){
+        if (KillCount.killValue % spawnAt == 0 ){
             ableSpawn =true;
         }    
-        while (count == 0 && ableSpawn){
+        while (ableSpawn){
             GameObject enemySpawn = enemyPrefabType[0]; // randomly set a type of enemy prefab
             Instantiate(enemySpawn, transform.position, Quaternion.identity); // spawn the enemy at the position of the spawner
-            count = 1;
+            ableSpawn = false;
         }
     }
     
