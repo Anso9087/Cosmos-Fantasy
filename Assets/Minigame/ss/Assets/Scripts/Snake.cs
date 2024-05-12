@@ -100,7 +100,8 @@ public class Snake : MonoBehaviour
         else if (other.gameObject.CompareTag("Apple")) { Grow(); Grow(); } //bugs
         else if (other.gameObject.CompareTag("Poison")) { Grow(); poisonCam(Random.RandomRange(2,6)); } // random poison
         else if (other.gameObject.CompareTag("Obstacle")) { ResetState(); } // maybe I will updata new things
-        else if (other.gameObject.CompareTag("Wall")) {if (wallTP) { Traverse(other.transform); } else { ResetState(); }}}
+        else if (other.gameObject.CompareTag("Wall")) {if (wallTP) { Traverse(other.transform); } 
+        else {  PlayerPrefs.SetInt("count", 2); SceneManager.LoadScene("Minigame1"); }}}
     private void Traverse(Transform wall)
     {   Vector3 position = transform.position;
         if (direction.x != 0f) { position.x = -wall.position.x + direction.x; } // can use Mathf.RoundToInt()
