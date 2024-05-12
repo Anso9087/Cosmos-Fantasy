@@ -62,25 +62,23 @@ public class Snake : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {   if (Time.time < nextUpdate) { return; } // Wait til next update
-        if (input != Vector2Int.zero) { direction = input; } // Set the new direction based on the input
+    {   if (Time.time < nextUpdate) { return; } // wait til next update
+        if (input != Vector2Int.zero) { direction = input; } // set direction based on input
 
-        for (int i = bodyParts.Count - 1; i > 0; i--){ bodyParts[i].position = bodyParts[i - 1].position; } //each bodyPart follows reverse order set previous position or stack on top of each other.
+        for (int i = bodyParts.Count - 1; i > 0; i--){ bodyParts[i].position = bodyParts[i - 1].position; } // each bodyPart follow the older themselves and stack
 
-        // Move the snake in the direction it is facing
-        // Round the values to ensure it aligns to the grid
-        int x = Mathf.RoundToInt(transform.position.x) + direction.x;
+        int x = Mathf.RoundToInt(transform.position.x) + direction.x; // get x y
         int y = Mathf.RoundToInt(transform.position.y) + direction.y;
-        transform.position = new Vector2(x, y);
-        nextUpdate = Time.time + (1f / (speed * speedAdder)); // Set the next update time based on the speed
+        transform.position = new Vector2(x, y); // snake facing x or y
+        nextUpdate = Time.time + (1f / (speed * speedAdder)); // next time (speed+speedAdder)
     }
-    public void LeaveBehind(){ bodyParts.Remove(bodyParts[bodyParts.Count-1]); }
+    public void LeaveBehind(){ bodyParts.Remove(bodyParts[bodyParts.Count-1]); } // eggs
     public void Grow()
-    {   Transform bodyPart = Instantiate(bodyPartPrefab);
-        bodyPart.position = bodyParts[bodyParts.Count - 1].position;
-        bodyParts.Add(bodyPart);
+    {   Transform bodyPart = Instantiate(bodyPartPrefab); // more body
+        bodyPart.position = bodyParts[bodyParts.Count - 1].position; // add pos
+        bodyParts.Add(bodyPart); // add body
     }
-    public void Ungrow(){ Destroy(bodyParts[bodyParts.Count].gameObject); bodyParts.Remove(bodyParts[bodyParts.Count+1]);} // bugs
+    public void Ungrow(){ Destroy(bodyParts[bodyParts.Count].gameObject); bodyParts.Remove(bodyParts[bodyParts.Count+1]);} // unbody // bugs
     public void ResetState()
     {   if (Random.Range(0, 2)==0) { direction = Vector2Int.right; } else { direction = Vector2Int.left; } // ran go direction
         //direction = Random.(Vector2Int.right, Vector2Int.left); // ran go direction
@@ -89,8 +87,7 @@ public class Snake : MonoBehaviour
 
         for (int i = 1; i < bodyParts.Count; i++) { Destroy(bodyParts[i].gameObject); } // start at 1 to not destroy head
 
-        if (dieIsRebody) { bodyParts.Clear(); bodyParts.Add(transform);}// no more body but add back head
-          
+        if (dieIsRebody) { bodyParts.Clear(); bodyParts.Add(transform);} // no more body but add back head
 
         for (int i = 0; i < initialSize - 1; i++) { Grow(); } // -1 (head is in list)
 
@@ -99,18 +96,17 @@ public class Snake : MonoBehaviour
     public bool Occupies(int x, int y)
     { foreach (Transform bodyPart in bodyParts) { if (bodyPart.position.x == x && bodyPart.position.y == y) { return true; } } return false; }// can use Mathf.RoundToInt()
     private void OnTriggerEnter2D(Collider2D other)
-    {   if (other.gameObject.CompareTag("Food")) { Grow(); }
+    {   if (other.gameObject.CompareTag("Food")) { Grow(); } // old food
         else if (other.gameObject.CompareTag("Apple")) { Grow(); Grow(); } //bugs
-        else if (other.gameObject.CompareTag("Poison")) { Grow(); poisonCam(Random.RandomRange(2,6)); }
+        else if (other.gameObject.CompareTag("Poison")) { Grow(); poisonCam(Random.RandomRange(2,6)); } // random poison
         else if (other.gameObject.CompareTag("Obstacle")) { ResetState(); } // maybe I will updata new things
-        else if (other.gameObject.CompareTag("Wall")) {if (wallTP) { Traverse(other.transform); } 
-        else {  PlayerPrefs.SetInt("count", 2); SceneManager.LoadScene("Minigame1"); }}}
+        else if (other.gameObject.CompareTag("Wall")) {if (wallTP) { Traverse(other.transform); } else { ResetState(); }}}
     private void Traverse(Transform wall)
     {   Vector3 position = transform.position;
         if (direction.x != 0f) { position.x = -wall.position.x + direction.x; } // can use Mathf.RoundToInt()
         else if (direction.y != 0f) { position.y = -wall.position.y + direction.y; } // can use Mathf.RoundToInt()
         transform.position = position;}
-    private void poisonCam(float rotate) { transform.eulerAngles = transform.eulerAngles + new Vector3(0, 0, rotate); }
-    private void reCam() { transform.eulerAngles = new Vector3(0, 0, 0); }
+    private void poisonCam(float rotate) { transform.eulerAngles = transform.eulerAngles + new Vector3(0, 0, rotate); } // get poisoned
+    private void reCam() { transform.eulerAngles = new Vector3(0, 0, 0); } // re-cam-location
     }
 
